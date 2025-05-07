@@ -22,6 +22,10 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token']
 }));
+// delete it errors occur
+app.get('/', (req, res) => {
+  res.send('im kicking yoooooo');
+});
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
